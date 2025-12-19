@@ -70,7 +70,7 @@ except Exception as e:
 def process(data):
     result = []
     for i in range(len(data)):
-        if data[i] != None:::
+        if data[i] != None::::
             result.append(data[i])
     return result
 
