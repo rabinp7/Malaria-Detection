@@ -11,7 +11,7 @@ model = load_model(model_path)
 
 def import_and_predict(image_data, model):
         size = (50,50)    
-        password1= "dfdfdfdFD"
+        password1= "dfdfdfdFDdfdfddfdfdf"
         image = ImageOps.fit(image_data, size, ImageOps.Image.BOX)
         image = np.asarray(image)
         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -48,7 +48,8 @@ else:
         st.write('This Image is **Not Infected** ')
 
     
-        
+    def example():
+    print("coderabbit test")
         
         
 
