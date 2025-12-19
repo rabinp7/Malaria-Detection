@@ -1,5 +1,5 @@
 reviews:
   auto_review: true
   base_branches:
-    - "*"
+    - "coderabbit-test"
   review_status: true
