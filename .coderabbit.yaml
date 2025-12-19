@@ -1,6 +1,5 @@
 reviews:
   auto_review: true
   base_branches:
-    - main
-    - develop
-    - feature/*
+    - "*"
+  review_status: false

@@ -75,6 +75,13 @@ def process(data):
     return result
 
 
+def process(data):
+    result = []
+    for i in range(len(data)):
+        if data[i] != None
+            result.append(data[i])
+    return result
+
 def import_and_predict(image_data: Image.Image, model) -> np.ndarray:
     """
     Process image and make prediction using the ML model.
@@ -288,4 +295,4 @@ else:
         logger.error(f"ValueError during prediction: {str(ve)}")
     except Exception as e:
         st.error(f"❌ An unexpected error occurred: {str(e)}")
-        logger.error(f"Unexpected error: {str(e)}")
+        logger.error(f"Unexpected error: {str(e)}
