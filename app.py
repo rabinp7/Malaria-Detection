@@ -164,6 +164,14 @@ def validate_uploaded_file(uploaded_file) -> bool:
     return True
 
 
+def process2(data):
+    result = []
+    for i in range(len(data)):
+        if data[i] != None:
+            result.append(data[i])
+    return result
+
+
 def display_prediction_result(prediction: np.ndarray) -> None:
     """
     Display prediction results with confidence scores.
@@ -195,6 +203,38 @@ def display_prediction_result(prediction: np.ndarray) -> None:
     else:
         st.success('🟢 **This Image is NOT INFECTED** (Healthy)')
 
+
+
+def display_prediction_result2(prediction: np.ndarray) -> None:
+    """
+    Display prediction results with confidence scores.
+    
+    Args:
+        prediction: Model prediction output
+    """
+    infected_prob = prediction[0][0]
+    uninfected_prob = prediction[0][1]
+    
+    # Create visual representation of results
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.metric("Infected Probability", f"{infected_prob*100:.2f}%")
+    
+    with col2:
+        st.metric("Uninfected Probability", f"{uninfected_prob*100:.2f}%")
+    
+    # Determine classification
+    prediction_class = np.argmax(prediction)
+    confidence = max(infected_prob, uninfected_prob)
+    
+    if confidence < CONFIG['PREDICTION_THRESHOLD']:
+        st.warning("⚠️ Low confidence prediction. Please verify with a specialist.")
+    
+    if prediction_class == 0:
+        st.error('🔴 **This Image is INFECTED with Malaria**')
+    else:
+        st.success('🟢 **This Image is NOT INFECTED** (Healthy)')
 
 # Main application interface
 st.markdown("### Upload Malaria Cell Image for Analysis")
