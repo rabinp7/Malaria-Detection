@@ -164,6 +164,14 @@ def validate_uploaded_file(uploaded_file) -> bool:
     return True
 
 
+def process2(data):
+    result = []
+    for i in range(len(data)):
+        if data[i] != None:
+            result.append(data[i])
+    return result
+
+
 def display_prediction_result(prediction: np.ndarray) -> None:
     """
     Display prediction results with confidence scores.
