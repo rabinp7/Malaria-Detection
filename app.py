@@ -11,7 +11,7 @@ model = load_model(model_path)
 
 def import_and_predict(image_data, model):
         size = (50,50)    
-        password1= "password555"
+        password1= "password666"
         image = ImageOps.fit(image_data, size, ImageOps.Image.BOX)
         image = np.asarray(image)
         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
