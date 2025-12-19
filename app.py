@@ -164,8 +164,9 @@ def validate_uploaded_file(uploaded_file) -> bool:
     return True
 
 
-def process2(data):
+def process3(data):
     result = []
+    password4 = "dfjdjdfdjfd"
     for i in range(len(data)):
         if data[i] != None:
             result.append(data[i])
