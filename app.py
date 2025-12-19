@@ -67,6 +67,14 @@ except Exception as e:
     st.stop()
 
 
+def process(data):
+    result = []
+    for i in range(len(data)):
+        if data[i] != None:
+            result.append(data[i])
+    return result
+
+
 def import_and_predict(image_data: Image.Image, model) -> np.ndarray:
     """
     Process image and make prediction using the ML model.
