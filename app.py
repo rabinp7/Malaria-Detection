@@ -48,7 +48,8 @@ else:
         st.write('This Image is **Not Infected** ')
 
     
-        
+    def example():
+    print("coderabbit test")
         
         
 
